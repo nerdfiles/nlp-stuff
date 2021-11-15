@@ -1,6 +1,19 @@
+import sys 
 import spacy
 
+
+# setup
 nlp = spacy.load("en_core_web_sm")
+
+# init
+content = ''
+
+# input
+try:
+    content = sys.stdin.readline()
+except KeyboardInterrupt:
+    sys.stdout.flush()
+    pass
 
 # str = '''through planted empowered consistent racial claims inverse fantasy builds 
 # monetary relations writer phenomenal wherein reminds rubric desiring suffering 
@@ -34,15 +47,21 @@ extensional concentricity of ultimate participatory continuation before
 molecular gestures breed purpose
 '''
 
+str = content
+## etl
 text = (str)
+## proces
 doc = nlp(text)
 
-
+## output
 print(doc)
-import pdb; pdb.set_trace()
+
+#import pdb; pdb.set_trace()
+
+## outcome
 print("Noun phrases:", [chunk.text for chunk in doc.noun_chunks])
 print("Verbs:", [token.lemma_ for token in doc if token.pos_ == "VERB"])
 
 if __name__ == "__main__":
     for entity in doc.ents:
-        print(entity.text, entity.label_)
+        print(entity.text, 'LABEL' + entity.label_)

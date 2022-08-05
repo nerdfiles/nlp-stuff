@@ -1,0 +1,1 @@
+Money has to serve not rule

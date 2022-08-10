@@ -17,14 +17,16 @@ def ret(name = "en_core_web_sm"):
 nlp = ret(name = "en_core_web_sm")
 
 content = ''
+text = None
 
 try:
-    content = sys.stdin.readline()
+    content = sys.stdin.readlines()
 except KeyboardInterrupt:
     sys.stdout.flush()
     pass
 
-text = (content)
+glue = ''
+text = glue.join(content)
 DOC = nlp(text)
 
 LABELS_LIST = {}
@@ -44,9 +46,8 @@ OUT = {
 }
 
 if __name__ == "__main__":
-    s = str(OUT)
     # @note mind not using sed to replace apostrophes
-    o = json.loads(s)
+    # pprint(sys.stdin)
+    print(OUT)
 
-
-
+# EOF

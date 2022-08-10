@@ -44,6 +44,9 @@ OUT = {
 }
 
 if __name__ == "__main__":
-    pp.pprint(OUT)
+    s = str(OUT)
+    # @note mind not using sed to replace apostrophes
+    o = json.loads(s)
+
 
 

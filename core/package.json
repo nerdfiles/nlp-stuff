@@ -1,0 +1,14 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    ".": "python __init__.py # try: $ cat FILE | npm run .",
+    "v": "python viz.py # try: $ npm run v FILE",
+    "help": "npm run $(echo \"$(npm run)\" | percol)"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

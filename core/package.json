@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    ".": "python __init__.py # try: $ cat FILE | npm run .",
-    "v": "python viz.py # try: $ npm run v FILE",
+    ".": "python __init__.py",
+    "./help": "echo 'try: $ cat FILE | npm run .'",
+    "v": "python viz.py",
+    "v/help": "echo 'try: $ npm run v FILE'",
     "help": "npm run $(echo \"$(npm run)\" | percol)"
   },
   "keywords": [],

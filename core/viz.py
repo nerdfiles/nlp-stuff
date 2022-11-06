@@ -1,5 +1,6 @@
 import spacy
 from spacy import displacy
+import explacy
 from pprint import pprint
 
 nlp = spacy.load("en_core_web_sm")
@@ -30,5 +31,9 @@ content = f.readlines()
 label = content[0:][0]
 pprint(label)
 doc = nlp(label)
+
+explacy.print_parse_info(nlp, label)
 displacy.serve(doc, style="dep")
 f.close()
+
+# EOF
